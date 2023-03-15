@@ -44,12 +44,14 @@ const W12MForm = () => {
         labelText="Number Of Beings"
       />
       <SelectInput
+        validationType="validateQuestion"
         name="question"
         onChangeHandler={handleFormData}
         value={formData.question}
         labelText="What is 2+2?"
       />
       <TextAreaInput
+        validationType="validateReasonText"
         onChangeHandler={handleFormData}
         value={formData.reasonText}
         name="reasonText"

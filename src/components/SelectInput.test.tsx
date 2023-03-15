@@ -6,6 +6,7 @@ test("renders select element correctly", () => {
   render(
     <SelectInput
       name="select-name"
+      validationType="validateQuestion"
       value=""
       onChangeHandler={onchangeHandler}
       labelText="this is selectBox"
@@ -20,6 +21,7 @@ test("renders select element value correctly when passed through props", () => {
   render(
     <SelectInput
       value="Not 4"
+      validationType="validateQuestion"
       onChangeHandler={onchangeHandler}
       name="select-name"
       labelText="this is textbox"
@@ -32,6 +34,7 @@ test("renders select element value correctly when passed through props", () => {
 test("renders select element value correctly", () => {
   render(
     <SelectInput
+      validationType="validateQuestion"
       value=""
       onChangeHandler={onchangeHandler}
       name="select-name"

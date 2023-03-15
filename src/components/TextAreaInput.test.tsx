@@ -4,6 +4,7 @@ const onchangeHandler = jest.fn();
 test("renders text area element correctly", () => {
   render(
     <TextAreaInput
+      validationType="validateReasonText"
       onChangeHandler={onchangeHandler}
       name="text-area"
       value=""
@@ -19,6 +20,7 @@ test("renders text area element correctly", () => {
 test("renders text area element value correctly when passed through props", () => {
   render(
     <TextAreaInput
+      validationType="validateReasonText"
       onChangeHandler={onchangeHandler}
       name="text-area"
       value="testing"
