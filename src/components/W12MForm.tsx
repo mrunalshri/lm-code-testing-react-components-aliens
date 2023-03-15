@@ -23,18 +23,21 @@ const W12MForm = () => {
     <section className="w12MForm">
       <W12MHeader />
       <TextInput
+        validationType="validateSpeciesName"
         onChangeHandler={handleFormData}
         value={formData.species}
         name="species"
         labelText="Species Name:"
       />
       <TextInput
+        validationType="validatePlanetName"
         onChangeHandler={handleFormData}
         value={formData.planet}
         name="planet"
         labelText="Planet Name:"
       />
       <TextInput
+        validationType="validateNumberOfBeings"
         onChangeHandler={handleFormData}
         value={formData.numberOfBeings}
         name="numberOfBeings"

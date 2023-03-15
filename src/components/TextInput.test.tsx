@@ -4,6 +4,7 @@ const onchangeHandler = jest.fn();
 test("renders input element correctly", () => {
   render(
     <TextInput
+      validationType="validateNumberOfBeings"
       onChangeHandler={onchangeHandler}
       name="test"
       labelText="this is textbox"
@@ -18,6 +19,7 @@ test("renders input element correctly", () => {
 test("renders input element value correctly when passed through props", () => {
   render(
     <TextInput
+      validationType="validateNumberOfBeings"
       onChangeHandler={onchangeHandler}
       name="test"
       labelText="this is textbox"
@@ -31,6 +33,7 @@ test("renders input element value correctly when passed through props", () => {
 test("renders input element value correctly", () => {
   render(
     <TextInput
+      validationType="validateNumberOfBeings"
       onChangeHandler={onchangeHandler}
       name="test"
       labelText="this is textbox"
