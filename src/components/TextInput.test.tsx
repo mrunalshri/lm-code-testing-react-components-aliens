@@ -15,6 +15,19 @@ test("renders input element correctly", () => {
   expect(textInputElement).toBeInTheDocument();
 });
 
+test("renders input element value correctly when passed through props", () => {
+  render(
+    <TextInput
+      onChangeHandler={onchangeHandler}
+      name="test"
+      labelText="this is textbox"
+      value="abcd"
+    />
+  );
+  const textInputElement = screen.getByRole("textbox");
+  expect(textInputElement).toHaveValue("abcd");
+});
+
 test("renders input element value correctly", () => {
   render(
     <TextInput

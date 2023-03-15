@@ -3,18 +3,18 @@ import React from "react";
 interface ButtonProps {
   labelText: string;
   type: "submit" | "button";
+  onChangeHandler: () => void;
 }
 
-const Button: React.FC<ButtonProps> = (props) => {
+const Button: React.FC<ButtonProps> = ({
+  onChangeHandler,
+  type,
+  labelText,
+}) => {
   return (
     <div>
-      <button
-        type={props.type}
-        onClick={() => {
-          console.log("hiii");
-        }}
-      >
-        {props.labelText}
+      <button type={type} onClick={onChangeHandler}>
+        {labelText}
       </button>
     </div>
   );

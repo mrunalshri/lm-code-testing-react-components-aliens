@@ -16,7 +16,9 @@ const W12MForm = () => {
   const handleFormData = (key: string, value: string) => {
     setFormData({ ...formData, [key]: value });
   };
-  console.log("formData====>", formData);
+  const submitFormData = () => {
+    console.log("submitFormData==>", formData);
+  };
   return (
     <section className="w12MForm">
       <W12MHeader />
@@ -50,7 +52,11 @@ const W12MForm = () => {
         name="reasonText"
         labelText="Reason for sparing:"
       />
-      <Button type="button" labelText="Submit form" />
+      <Button
+        onChangeHandler={submitFormData}
+        type="button"
+        labelText="Submit form"
+      />
     </section>
   );
 };

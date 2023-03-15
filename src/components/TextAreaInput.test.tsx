@@ -15,3 +15,16 @@ test("renders text area element correctly", () => {
   expect(labelInputElement).toBeInTheDocument();
   expect(textAreaInputElement).toBeInTheDocument();
 });
+
+test("renders text area element value correctly when passed through props", () => {
+  render(
+    <TextAreaInput
+      onChangeHandler={onchangeHandler}
+      name="text-area"
+      value="testing"
+      labelText="this is textArea"
+    />
+  );
+  const textInputElement = screen.getByRole("textbox");
+  expect(textInputElement).toHaveValue("testing");
+});
