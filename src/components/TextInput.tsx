@@ -5,7 +5,7 @@ import ErrorMessage from "./ErrorMessage";
 interface TextInputProps {
   labelText: string;
   name: string;
-  value?: string;
+  value: string;
   validationType: string;
   onChangeHandler: (key: string, value: string) => void;
 }

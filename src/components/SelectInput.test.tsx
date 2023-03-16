@@ -45,3 +45,35 @@ test("renders select element value correctly", () => {
   fireEvent.change(selectInputElement, { target: { value: "4" } });
   expect(selectInputElement).toHaveValue("4");
 });
+
+test("should renders error message if incorrect value selected for What is 2 + 2:", () => {
+  render(
+    <SelectInput
+      validationType="validateQuestion"
+      value=""
+      onChangeHandler={onchangeHandler}
+      name="select-name"
+      labelText="this is textbox"
+    />
+  );
+  const selectInputElement = screen.getByLabelText(/select-options/);
+  fireEvent.change(selectInputElement, { target: { value: "Not 4" } });
+  const errorComponent = screen.queryByText("Invalid Input!");
+  expect(errorComponent).toBeInTheDocument();
+});
+
+test("should not renders error message if correct value selected for What is 2 + 2", () => {
+  render(
+    <SelectInput
+      validationType="validateQuestion"
+      value=""
+      onChangeHandler={onchangeHandler}
+      name="select-name"
+      labelText="this is textbox"
+    />
+  );
+  const selectInputElement = screen.getByLabelText(/select-options/);
+  fireEvent.change(selectInputElement, { target: { value: "4" } });
+  const errorComponent = screen.queryByText("Invalid Input!");
+  expect(errorComponent).not.toBeInTheDocument();
+});
