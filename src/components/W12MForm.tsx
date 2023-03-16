@@ -16,52 +16,51 @@ const W12MForm = () => {
   const handleFormData = (key: string, value: string) => {
     setFormData({ ...formData, [key]: value });
   };
-  const submitFormData = () => {
+  const submitFormData = (e: React.FormEvent) => {
+    e.preventDefault();
     console.log("submitFormData==>", formData);
   };
   return (
     <section className="w12MForm">
       <W12MHeader />
-      <TextInput
-        validationType="validateSpeciesName"
-        onChangeHandler={handleFormData}
-        value={formData.species}
-        name="species"
-        labelText="Species Name:"
-      />
-      <TextInput
-        validationType="validatePlanetName"
-        onChangeHandler={handleFormData}
-        value={formData.planet}
-        name="planet"
-        labelText="Planet Name:"
-      />
-      <TextInput
-        validationType="validateNumberOfBeings"
-        onChangeHandler={handleFormData}
-        value={formData.numberOfBeings}
-        name="numberOfBeings"
-        labelText="Number Of Beings"
-      />
-      <SelectInput
-        validationType="validateQuestion"
-        name="question"
-        onChangeHandler={handleFormData}
-        value={formData.question}
-        labelText="What is 2+2?"
-      />
-      <TextAreaInput
-        validationType="validateReasonText"
-        onChangeHandler={handleFormData}
-        value={formData.reasonText}
-        name="reasonText"
-        labelText="Reason for sparing:"
-      />
-      <Button
-        onChangeHandler={submitFormData}
-        type="button"
-        labelText="Submit form"
-      />
+      <form onSubmit={submitFormData}>
+        <TextInput
+          validationType="validateSpeciesName"
+          onChangeHandler={handleFormData}
+          value={formData.species}
+          name="species"
+          labelText="Species Name:"
+        />
+        <TextInput
+          validationType="validatePlanetName"
+          onChangeHandler={handleFormData}
+          value={formData.planet}
+          name="planet"
+          labelText="Planet Name:"
+        />
+        <TextInput
+          validationType="validateNumberOfBeings"
+          onChangeHandler={handleFormData}
+          value={formData.numberOfBeings}
+          name="numberOfBeings"
+          labelText="Number Of Beings"
+        />
+        <SelectInput
+          validationType="validateQuestion"
+          name="question"
+          onChangeHandler={handleFormData}
+          value={formData.question}
+          labelText="What is 2+2?"
+        />
+        <TextAreaInput
+          validationType="validateReasonText"
+          onChangeHandler={handleFormData}
+          value={formData.reasonText}
+          name="reasonText"
+          labelText="Reason for sparing:"
+        />
+        <Button type="submit" labelText="Submit form" />
+      </form>
     </section>
   );
 };

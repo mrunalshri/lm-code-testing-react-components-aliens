@@ -31,7 +31,7 @@ test("renders text area element value correctly when passed through props", () =
   expect(textInputElement).toHaveValue("testing");
 });
 
-test("should renders error message if input has correct value for Reason for sparing:", () => {
+test("should renders error message if input has incorrect value for Reason for sparing:", () => {
   render(
     <TextAreaInput
       validationType="validateReasonText"

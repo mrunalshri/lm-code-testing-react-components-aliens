@@ -3,7 +3,7 @@ import React from "react";
 interface ButtonProps {
   labelText: string;
   type: "submit" | "button";
-  onChangeHandler: () => void;
+  onChangeHandler?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
